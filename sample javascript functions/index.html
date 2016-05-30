@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Demo: 3</title>
+	<script script type="text/javascript" src="demo1.js"></script>
+	<link rel="STYLESHEET" type="text/css" href="jsc.css">
+</head>
+<body>
+<a href="javascript:toggleFormVisibility();" id="sub">Subscribe to our Newsletter!</a>
+<form name ="subscribe" id="subscribe_frm" action="#" style="display: none"> 
+<div class="user">
+	<p>Please enter your subscription information:</p>		
+
+<div >
+	<p><input type="text" name="name" id="txt_name" placeholder="name" class="inputdata"></p>
+	<p><input type="text" name="email" id="txt_email" placeholder="email" class="inputdata"></p>
+	<p> <select name="mail_format" id="slt_mail_format"  class="inputdata">
+						<option value="choice">TEXT</option>
+						<option value="TEXT">Mail format??</option>
+						<option value="HTML">HTML</option>
+						</select></p> 	
+	<p><input type="button" name="submit" value="submit" onclick="processFormData();"  class="inputdata" ></p>
+</div> 
+<a href="javascript:toggleFormVisibility();" id="nosub" style="display: none">No, Thank you! Some other time, perhaps....</a>
+</form>
+
+<p>A script on this page starts this clock:</p>
+
+<p id="demo"></p>
+
+<script>
+var myVar = setInterval(myTimer, 1000);
+
+function myTimer() {
+    var d = new Date();
+    document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+}
+</script>
+
+</body>
+</html>

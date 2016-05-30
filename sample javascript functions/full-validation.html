@@ -1,0 +1,76 @@
+<!DOCTYPE HTML >
+
+<html>
+<head>
+<title>Form Validation example</title>
+	<meta NAME="DESCRIPTION" CONTENT="An example case of using the JavaScript form validation script">
+	<meta NAME="KEYWORDS" CONTENT="javascript form validation">	
+	<link rel="STYLESHEET" type="text/css" href="jsc.css">
+	<script language="JavaScript" src="vali.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="user">
+<H1>Welcome User</h1>
+
+<form action="" name="myform" class="center" >
+<table cellspacing="2" cellpadding="2" border="0">
+<tr>
+    
+    <td><input type="text" name="FirstName" placeholder="firstname" class="inputdata"></td>
+</tr>
+<tr>
+    
+    <td><input type="text" name="LastName" placeholder="lastname" class="inputdata"></td>
+</tr>
+<tr>
+    
+    <td><input type="text" name="Email" placeholder="email" class="inputdata"></td>
+</tr>
+
+
+<tr>
+    
+    <td><input type="submit" value="Submit" class="login"></td>
+</tr>
+<tr>
+      <td>
+  <div id='myform_errorloc' class='error_strings'>
+   </div>
+  </td>
+</tr>
+</table>
+</form>
+<script language="JavaScript" type="text/javascript">
+//You should create the validator only after the definition of the form
+  var frmvalidator  = new Validator("myform");
+
+  frmvalidator.EnableMsgsTogether();
+  frmvalidator.addValidation("FirstName","req","Please enter your First Name");
+  frmvalidator.addValidation("FirstName","maxlen=20",	"Max length for FirstName is 20");
+  frmvalidator.addValidation("FirstName","alpha","Alphabetic chars only");
+  
+  frmvalidator.addValidation("LastName","req","Please enter your Last Name");
+  frmvalidator.addValidation("LastName","maxlen=20","Max length is 20");
+  
+  frmvalidator.addValidation("Email","maxlen=50");
+  frmvalidator.addValidation("Email","req");
+  frmvalidator.addValidation("Email","email");
+    
+ ;
+</script>
+
+<P>
+<p><span class="userbtn-round">or</span></p>
+<p>
+<a class="userfacebook-before"></a>
+<button class="userfacebook">user Using Facebook</button>
+</p>
+<p>
+<a class="usertwitter-before"></a>
+<button class="usertwitter">user Using twitter</button>
+<a href="m.html" class="userbtn-round"> back</a>
+<br>
+</P>
+</div>
+</body>
+</html>
